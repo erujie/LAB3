@@ -29,14 +29,14 @@ int main() {
         case 1:
             std::cout << "Enter the file name: ";
             std::cin >> filename;
-            setFilePermissions(filename, S_IRUSR); // Read-only for user
+            setFilePermissions(filename, S_IRUSR); 
             break;
             
 
         case 2:
             std::cout << "Enter the file name: ";
             std::cin >> filename;
-            setFilePermissions(filename, S_IWUSR); // Write-only for user
+            setFilePermissions(filename, S_IWUSR); 
             break;
 
         case 3:
