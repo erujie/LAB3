@@ -28,13 +28,13 @@ int main() {
         case 1:
             std::cout << "Enter the file name: ";
             std::cin >> filename;
-            setFilePermissions(filename, S_IRUSR | S_IRGRP | S_IROTH);
+            setFilePermissions(filename, S_IRUSR);
             break;
             
         case 2:
             std::cout << "Enter the file name: ";
             std::cin >> filename;
-            setFilePermissions(filename, S_IWUSR | S_IWGRP | S_IWOTH);
+            setFilePermissions(filename, S_IWUSR);
             break;
 
         case 3:
