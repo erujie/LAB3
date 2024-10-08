@@ -15,36 +15,40 @@ void setFilePermissions(const char* filename, mode_t mode) {
 int main() {
     char filename[50];
     int choice;
+    
+    while (true) {
+        std::cout << "\t\tMAIN MENU OF PERMISSION\n";
+        std::cout << "\t--------------------------------\n";
+        std::cout << "1. Only Read\n";
+        std::cout << "2. Only Write\n";
+        std::cout << "3. Exit\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
 
-    std::cout << "\t\tMAIN MENU OF PERMISSION\n";
-    std::cout << "\t--------------------------------\n";
-    std::cout << "1. Only Read\n";
-    std::cout << "2. Only Write\n";
-    std::cout << "3. Exit\n";
-    std::cout << "Enter your choice: ";
-    std::cin >> choice;
-
-    switch (choice) {
-        case 1:
-            std::cout << "Enter the file name: ";
-            std::cin >> filename;
-            setFilePermissions(filename, S_IRUSR);
-            break;
+        switch (choice) {
+            case 1:
+                std::cout << "Enter the file name: ";
+                std::cin >> filename;
+                setFilePermissions(filename, S_IRUSR);
+                break;
             
-        case 2:
-            std::cout << "Enter the file name: ";
-            std::cin >> filename;
-            setFilePermissions(filename, S_IWUSR);
-            break;
+            case 2:
+                std::cout << "Enter the file name: ";
+                std::cin >> filename;
+                setFilePermissions(filename, S_IWUSR);
+                break;
 
-        case 3:
-            exit(0);
-            break;
+            case 3:
+                exit(0);
+                return 0;
 
-        default:
-            std::cout << "Invalid choice." << std::endl;
+            default:
+                std::cout << "Invalid choice." << std::endl;
+        }
+        std::cout << "Press any key to continue..." << std::endl;
+        
+		getch();
     }
 
-    getch();
-    return 0;
+ return 0;
 }
