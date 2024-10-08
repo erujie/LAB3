@@ -18,7 +18,7 @@ int main() {
     int choice;
 
     std::cout << "\t\tMAIN MENU OF PERNISSION\n";
-    std::cout << "t\--------------------------------\n";
+    std::cout << "\t--------------------------------\n";
     std::cout << "1. Only Read\n";
     std::cout << "2. Only Write\n";
     std::cout << "3. Exit\n";
