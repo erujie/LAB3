@@ -5,11 +5,10 @@
 #include <conio.h>
 
 void setFilePermissions(const char* filename, mode_t mode) {
-
     if (chmod(filename, mode) != 0) {
         perror("Error setting file permissions");
     } else {
-        std::cout << filename << "permissions updated successfully." << std::endl;
+        std::cout << filename << " permissions updated successfully." << std::endl;
     }
 }
 
@@ -17,7 +16,7 @@ int main() {
     char filename[50];
     int choice;
 
-    std::cout << "\t\tMAIN MENU OF PERNISSION\n";
+    std::cout << "\t\tMAIN MENU OF PERMISSION\n";
     std::cout << "\t--------------------------------\n";
     std::cout << "1. Only Read\n";
     std::cout << "2. Only Write\n";
@@ -29,14 +28,13 @@ int main() {
         case 1:
             std::cout << "Enter the file name: ";
             std::cin >> filename;
-            setFilePermissions(filename, S_IRUSR); 
+            setFilePermissions(filename, S_IRUSR | S_IRGRP | S_IROTH);
             break;
             
-
         case 2:
             std::cout << "Enter the file name: ";
             std::cin >> filename;
-            setFilePermissions(filename, S_IWUSR); 
+            setFilePermissions(filename, S_IWUSR | S_IWGRP | S_IWOTH);
             break;
 
         case 3:
